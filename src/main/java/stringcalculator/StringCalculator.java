@@ -1,8 +1,6 @@
 package stringcalculator;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -22,8 +20,13 @@ public class StringCalculator {
     }
 
     public List<Integer> parseStringToIntegerList(String text) {
-        List<Integer> result = new ArrayList<>();
         String[] splited = text.split(",|:");
+
+        return changeStringArrayToIntegerList(splited);
+    }
+
+    private List<Integer> changeStringArrayToIntegerList(String[] splited) {
+        List<Integer> result = new ArrayList<>();
 
         for (String split : splited) {
             result.add(Integer.parseInt(split));
@@ -48,5 +51,15 @@ public class StringCalculator {
         return Optional.empty();
     }
 
+    public Optional<List<Integer>> parseCustomStringToIntegerList(String text) {
+        Matcher m = Pattern.compile("//.\n(.*)").matcher(text);
+        String customDelimiter = parseCustomDelimiter(text).orElseThrow(NoSuchElementException::new);
 
+        if (m.find()) {
+            String[] tokens = m.group(1).split(customDelimiter);
+            System.out.println(Arrays.toString(tokens));
+            return Optional.of(changeStringArrayToIntegerList(tokens));
+        }
+        return Optional.empty();
+    }
 }

@@ -26,7 +26,7 @@ public class StringOperation {
 
     @Test
     @DisplayName("문자열에서 각 숫자들을 파싱하여 Integer 리스트에 담아서 반환")
-    void parse_string_to_integer_list() {
+    void parse_string_to_Integer_list() {
         String text = "1,2:3";
         List<Integer> expected = Arrays.asList(1, 2, 3);
 
@@ -53,5 +53,16 @@ public class StringOperation {
         String customDelimiter = stringCalculator.parseCustomDelimiter(text).get();
 
         Assertions.assertThat(customDelimiter).isEqualTo(";");
+    }
+
+    @Test
+    void parse_customString_to_Integer_list() {
+        String text = "//;\n1;2;3";
+        List<Integer> expected = Arrays.asList(1, 2, 3);
+
+        List<Integer> actual = stringCalculator.parseCustomStringToIntegerList(text).get();
+        for (int i = 0; i < expected.size(); i++) {
+            Assertions.assertThat(actual.get(i)).isEqualTo(expected.get(i));
+        }
     }
 }
