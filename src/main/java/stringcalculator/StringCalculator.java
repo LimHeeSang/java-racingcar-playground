@@ -29,9 +29,23 @@ public class StringCalculator {
         List<Integer> result = new ArrayList<>();
 
         for (String split : splited) {
+            isNumbers(split);
             result.add(Integer.parseInt(split));
         }
         return result;
+    }
+
+    private void isNumbers(String split) {
+        char[] asciiCodes = split.toCharArray();
+        for (Character asciiCode : asciiCodes) {
+            isNumber(asciiCode);
+        }
+    }
+
+    private void isNumber(Character asciiCode) {
+        if (asciiCode < '0' || asciiCode > '9') {
+            throw new RuntimeException();
+        }
     }
 
     public int sumOfIntegerList(List<Integer> list) {

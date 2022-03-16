@@ -65,4 +65,12 @@ public class StringOperation {
             Assertions.assertThat(actual.get(i)).isEqualTo(expected.get(i));
         }
     }
+
+    @Test
+    @DisplayName("문자열에 음수 또는 숫자이외의 값 전달시 예외 발생")
+    void calculator_value_validate() {
+        String text = "-1,a,3";
+        Assertions.assertThatThrownBy(() -> stringCalculator.parseStringToIntegerList(text))
+                .isInstanceOf(RuntimeException.class);
+    }
 }
