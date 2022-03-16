@@ -4,6 +4,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -35,5 +36,14 @@ public class StringOperation {
         for (int i = 0; i < expected.size(); i++) {
             Assertions.assertThat(actual.get(i)).isEqualTo(expected.get(i));
         }
+    }
+
+    @Test
+    @DisplayName("Integer list에서 각 숫자의 합을 반환")
+    void add_integer_list() {
+        List<Integer> list = Arrays.asList(1, 2, 3);
+        int sum = stringCalculator.sumOfIntegerList(list);
+
+        Assertions.assertThat(sum).isEqualTo(6);
     }
 }

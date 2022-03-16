@@ -27,4 +27,12 @@ public class StringCalculator {
         }
         return result;
     }
+
+    public int sumOfIntegerList(List<Integer> list) {
+        int sum = 0;
+        for (int temp : list) {
+            sum += temp;
+        }
+        return sum;
+    }
 }
