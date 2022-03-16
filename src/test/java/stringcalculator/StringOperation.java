@@ -4,7 +4,6 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,8 +16,8 @@ public class StringOperation {
         String emptyString = "";
         String nullString = null;
 
-        int emptyResult = stringCalculator.isEmptyOrNullString(emptyString);
-        int nullResult = stringCalculator.isEmptyOrNullString(nullString);
+        int emptyResult = stringCalculator.checkEmptyOrNullString(emptyString);
+        int nullResult = stringCalculator.checkEmptyOrNullString(nullString);
         int excepted = 0;
 
         Assertions.assertThat(emptyResult).isEqualTo(excepted);
@@ -45,5 +44,14 @@ public class StringOperation {
         int sum = stringCalculator.sumOfIntegerList(list);
 
         Assertions.assertThat(sum).isEqualTo(6);
+    }
+
+    @Test
+    @DisplayName("문자열에서 커스텀 구분자 파싱")
+    void parse_custom_delimiter() {
+        String text = "//;\n1;2;3";
+        String customDelimiter = stringCalculator.parseCustomDelimiter(text).get();
+
+        Assertions.assertThat(customDelimiter).isEqualTo(";");
     }
 }

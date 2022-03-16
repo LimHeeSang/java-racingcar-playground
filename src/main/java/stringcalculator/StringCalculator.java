@@ -2,9 +2,12 @@ package stringcalculator;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class StringCalculator {
-    public int isEmptyOrNullString(String text) {
+    public int checkEmptyOrNullString(String text) {
         if (isNullOfString(text)) {
             return 0;
         }
@@ -35,4 +38,15 @@ public class StringCalculator {
         }
         return sum;
     }
+
+    public Optional<String> parseCustomDelimiter(String text) {
+        Matcher m = Pattern.compile("//(.)\n(.*)").matcher(text);
+        if (m.find()) {
+            String customDelimiter = m.group(1);
+            return Optional.of(customDelimiter);
+        }
+        return Optional.empty();
+    }
+
+
 }
