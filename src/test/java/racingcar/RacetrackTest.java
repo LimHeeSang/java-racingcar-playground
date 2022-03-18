@@ -22,13 +22,6 @@ public class RacetrackTest {
     }
 
     @Test
-    @DisplayName("경주차들의 포지션 중 최대값 찾기")
-    void getMaxPosition() {
-        int maxPosition = raceTrack.getMaxPosition();
-        Assertions.assertThat(maxPosition).isEqualTo(1);
-    }
-
-    @Test
     @DisplayName("우승자 판단")
     void startRace() {
         List<String> winnerCarNames = raceTrack.startRace();

@@ -29,4 +29,12 @@ public class Cars {
         }
         return carNames;
     }
+
+    public void raceByAttempt(int attempt) {
+        for (int i = 0; i < attempt; i++) {
+            for (Car car : list) {
+                car.race();
+            }
+        }
+    }
 }
