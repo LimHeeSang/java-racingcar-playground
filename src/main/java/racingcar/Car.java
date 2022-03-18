@@ -28,6 +28,10 @@ public class Car {
         return position;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public int race() {
         int randomInt = makeRandomInt();
         if (randomInt >= RACE_CONDITION_VALUE) {
@@ -35,5 +39,9 @@ public class Car {
         }
 
         return position;
+    }
+
+    public boolean isEqualPosition(int position) {
+        return this.position == position;
     }
 }
