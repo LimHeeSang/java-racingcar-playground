@@ -37,4 +37,24 @@ public class Cars {
             }
         }
     }
+
+    public List<String> getCarNames() {
+        List<String> names = new ArrayList<>();
+        for (Car car : list) {
+            names.add(car.getName());
+        }
+        return names;
+    }
+
+    public List<Integer> getCarPositions() {
+        List<Integer> positions = new ArrayList<>();
+        for (Car car : list) {
+            positions.add(car.getPosition());
+        }
+        return positions;
+    }
+
+    public int getCarsCount() {
+        return list.size();
+    }
 }
