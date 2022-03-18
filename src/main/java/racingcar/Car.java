@@ -13,4 +13,9 @@ public class Car {
             throw new IllegalArgumentException("자동차 이름은 5글자를 초과할 수 없습니다.");
         }
     }
+
+    public int makeRandomInt() {
+        // 0 <= int < 1
+        return (int) (Math.random() * 9 + 1);
+    }
 }

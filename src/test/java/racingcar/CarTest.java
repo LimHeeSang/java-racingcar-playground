@@ -11,4 +11,12 @@ public class CarTest {
         Assertions.assertThatThrownBy(() -> new Car("abcdef"))
                 .isInstanceOf(IllegalArgumentException.class);
     }
+
+    @Test
+    @DisplayName("0~9사이의 랜덤값 반환")
+    void makeRandom() {
+        Car car = new Car("pobi");
+        int actual = car.makeRandomInt();
+        org.junit.jupiter.api.Assertions.assertTrue(actual >= 0 && actual <= 9);
+    }
 }
