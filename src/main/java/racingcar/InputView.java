@@ -1,6 +1,5 @@
 package racingcar;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -13,5 +12,11 @@ public class InputView {
         String carNames = scanner.nextLine();
         String[] splitedCarNames = carNames.split(",");
         return Arrays.asList(splitedCarNames);
+    }
+
+    public int inputRaceAttempt() {
+        System.out.println("시도할 회수는 몇회인가요?");
+        Scanner sc = new Scanner(System.in);
+        return sc.nextInt();
     }
 }
