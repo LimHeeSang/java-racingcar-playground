@@ -1,23 +1,26 @@
 package racingcar;
 
 public class Car {
+    public static final int START_POSITION = 1;
+    public static final int MAX_CAR_NAME_LENGTH = 5;
+    public static final int RACE_CONDITION_VALUE = 4;
+
     private final String name;
     private int position;
 
     public Car(String name) {
         validateConstructor(name);
         this.name = name;
-        this.position = 0;
+        this.position = START_POSITION;
     }
 
     private void validateConstructor(String name) {
-        if (name.length() > 5) {
+        if (name.length() > MAX_CAR_NAME_LENGTH) {
             throw new IllegalArgumentException("자동차 이름은 5글자를 초과할 수 없습니다.");
         }
     }
 
     public int makeRandomInt() {
-        // 0 <= int < 1
         return (int) (Math.random() * 9 + 1);
     }
 
@@ -27,7 +30,7 @@ public class Car {
 
     public int race() {
         int randomInt = makeRandomInt();
-        if (randomInt >= 4) {
+        if (randomInt >= RACE_CONDITION_VALUE) {
             position++;
         }
 
