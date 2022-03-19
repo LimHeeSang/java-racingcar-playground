@@ -17,6 +17,8 @@ public class InputView {
     public int inputRaceAttempt() {
         System.out.println("시도할 회수는 몇회인가요?");
         Scanner sc = new Scanner(System.in);
-        return sc.nextInt();
+        int attempt = sc.nextInt();
+        System.out.println();
+        return attempt;
     }
 }

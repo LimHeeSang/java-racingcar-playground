@@ -5,6 +5,13 @@ import java.util.List;
 
 public class Cars {
     private final List<Car> list = new ArrayList<>();
+    private final ResultView resultView = new ResultView();
+
+    public Cars(List<String> carNames) {
+        for (String carName : carNames) {
+            list.add(new Car(carName));
+        }
+    }
 
     public void add(Car car) {
         list.add(car);
@@ -31,10 +38,12 @@ public class Cars {
     }
 
     public void raceByAttempt(int attempt) {
+        resultView.printInterimResult(this);
         for (int i = 0; i < attempt; i++) {
             for (Car car : list) {
                 car.race();
             }
+            resultView.printInterimResult(this);
         }
     }
 
