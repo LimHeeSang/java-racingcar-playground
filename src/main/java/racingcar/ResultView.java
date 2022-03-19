@@ -17,4 +17,14 @@ public class ResultView {
             System.out.println();
         }
     }
+
+    public void printFinalResult(List<String> winnerCarNames) {
+        for (int i = 0; i < winnerCarNames.size(); i++) {
+            if (i == winnerCarNames.size() - 1) {
+                System.out.print(winnerCarNames.get(i));
+            }
+            System.out.print(winnerCarNames.get(i) + ",");
+        }
+        System.out.println("가 최종 우승했습니다.");
+    }
 }
