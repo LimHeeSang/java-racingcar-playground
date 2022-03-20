@@ -4,7 +4,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class CarNameTest {
+public class NameTest {
     @Test
     @DisplayName("자동차 이름이 5글자를 초과하는지 검증")
     void valid_car_name() {

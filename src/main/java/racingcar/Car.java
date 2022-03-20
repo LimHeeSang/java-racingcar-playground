@@ -1,9 +1,9 @@
 package racingcar;
 
 public class Car {
-    private final CarName carName;
+    private final Name name;
 
     public Car(String name) {
-        carName = new CarName(name);
+        this.name = new Name(name);
     }
 }
