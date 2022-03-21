@@ -36,4 +36,8 @@ public class Position {
     public boolean isMaxThan(Position maxPosition) {
         return this.position > maxPosition.position;
     }
+
+    public int getValue() {
+        return position;
+    }
 }

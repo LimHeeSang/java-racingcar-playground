@@ -13,6 +13,10 @@ public class Car {
         this.position = new Position(position);
     }
 
+    public int getIntPosition() {
+        return position.getValue();
+    }
+
     public Position getPosition() {
         return position;
     }
@@ -30,5 +34,9 @@ public class Car {
 
     public boolean isEqualPosition(Position maxPosition) {
         return position.equals(maxPosition);
+    }
+
+    public String getName() {
+        return name.getName();
     }
 }
