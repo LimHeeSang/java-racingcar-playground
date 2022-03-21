@@ -1,14 +1,16 @@
 package racingcar;
 
-import java.util.Random;
-
 public class Car {
     private final Name name;
     private Position position;
 
     public Car(String name) {
-        this.position = new Position();
+        this(name, 0);
+    }
+
+    public Car(String name, int position) {
         this.name = new Name(name);
+        this.position = new Position(position);
     }
 
     public Position getPosition() {
@@ -22,5 +24,11 @@ public class Car {
         return getPosition();
     }
 
+    public boolean isMaxPositionThan(Position maxPosition) {
+        return position.isMaxThan(maxPosition);
+    }
 
+    public boolean isEqualPosition(Position maxPosition) {
+        return position.equals(maxPosition);
+    }
 }

@@ -32,4 +32,8 @@ public class Position {
     public int hashCode() {
         return Objects.hash(position);
     }
+
+    public boolean isMaxThan(Position maxPosition) {
+        return this.position > maxPosition.position;
+    }
 }
