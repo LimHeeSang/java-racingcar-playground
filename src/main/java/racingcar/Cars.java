@@ -1,7 +1,6 @@
 package racingcar;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Cars {
@@ -33,5 +32,15 @@ public class Cars {
             }
         }
         return maxPosition;
+    }
+
+    public void move(MovingStrategy movingStrategy) {
+        for (Car car : cars) {
+            car.move(movingStrategy);
+        }
+    }
+
+    public List<Car> getCars() {
+        return cars;
     }
 }
